@@ -4,4 +4,11 @@ import "../model.dart";
 class HomeModel extends ViewModel {
   /// The title of the app.
   final String title = "Home";
+
+  int count = 0;
+
+  void increment() {
+    count++;
+    notifyListeners();
+  }
 }

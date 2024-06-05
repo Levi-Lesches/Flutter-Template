@@ -11,6 +11,15 @@ class HomePage extends ReactiveWidget<HomeModel> {
   @override
   Widget build(BuildContext context, HomeModel model) => Scaffold(
     appBar: AppBar(title: Text(model.title)),
-    body: Container(),
+    body: Center(
+      child: Text(
+        "You have pressed the button ${model.count} times",
+        style: context.textTheme.headlineMedium,
+      ),
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: model.increment,
+      child: const Icon(Icons.add),
+    ),
   );
 }
